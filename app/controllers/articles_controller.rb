@@ -8,6 +8,9 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    unless params[:id] == 5
+      render text: "Article not found", status: 404
+    end
   end
 
   def new
